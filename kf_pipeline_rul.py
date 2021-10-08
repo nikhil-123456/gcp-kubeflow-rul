@@ -46,5 +46,6 @@ def first_pipeline():
 
 
 if __name__ == '__main__':
-    kfp.compiler.Compiler().compile(first_pipeline, 'FirstPipeline.yaml')
+    #kfp.compiler.Compiler().compile(first_pipeline, 'FirstPipeline.yaml')
     # kfp.Client().create_run_from_pipeline_func(basic_pipeline, arguments={})
+    pipeline = kfp.Client(host='704d162300234e8d-dot-us-central2.pipelines.googleusercontent.com').create_run_from_pipeline_func(first_pipeline, arguments={})
