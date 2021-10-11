@@ -6,7 +6,7 @@ outputs:
 
 implementation:
   container:
-    image: us-central2-docker.pkg.dev/clever-tube-317207/quickstart-docker-repo2/quickstart-image:tag1
+    image: fernandolpz/only-tests:download_data_v3
     command: [
       python, extract_data_rul.py,
 
