@@ -1,4 +1,4 @@
-name: Read Data Function
+name: Extract Data Function
 description: Read NASA machine data from local system
 inputs:
 - name: input_path
