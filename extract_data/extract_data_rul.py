@@ -36,7 +36,7 @@ if __name__ == '__main__':
     
     # Creating the directory where the output file will be created 
     # (the directory may or may not exist).
-    #Path(args.data).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.output_data).parent.mkdir(parents=True, exist_ok=True)
 
     _download_data(args)
     
