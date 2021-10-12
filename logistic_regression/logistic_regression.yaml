@@ -2,7 +2,7 @@ name: Logistic Regression Classifier
 description: Trains a Logistic Regression Classifier
 
 inputs:
-- {name: Data, type: LocalPath, description: 'Path where data is stored.'}
+- {name: Data, type: GCSPath, description: 'Path where data is stored.'}
 outputs:
 - {name: Accuracy, type: Float, description: 'Accuracy metric'}
 
