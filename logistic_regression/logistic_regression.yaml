@@ -8,7 +8,7 @@ outputs:
 
 implementation:
   container:
-    image: fernandolpz/only-tests:logistic_regression_v2
+    image: us-central1-docker.pkg.dev/clever-tube-317207/quickstart-docker-repo/quickstart-image3:tag1
     command: [
       python, logistic_regression_rul.py,
 
