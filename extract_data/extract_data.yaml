@@ -4,7 +4,7 @@ description: Read NASA machine data from local system
 inputs:
 - {name: input 1, type: GCSPath, description: 'input path'}
 outputs:
-- {name: output 1, type: String, description: 'output path'}
+- {name: output 1, type: GCSPath, description: 'output path'}
 
 implementation:
   container:
