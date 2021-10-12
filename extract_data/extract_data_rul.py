@@ -16,23 +16,8 @@ from pathlib import Path
 def _download_data(args):
 
     # Gets and split dataset
-    #x, y = load_breast_cancer(return_X_y=True)
-    #data = pd.read_table('C:/Users/Nikhil/kubeflow/RUL_Prediction/train_FD001.txt', sep='\s+', header=None)
     data = pd.read_table('gs://bucket_kubeflow/train_FD001.txt',sep='\s+', header=None)
-    #columns = ['unit_number','time_in_cycles','setting_1','setting_2','TRA','T2','T24','T30','T50','P2','P15','P30','Nf','Nc','epr','Ps30','phi','NRf','NRc','BPR','farB','htBleed','Nf_dmd','PCNfR_dmd','W31','W32']
-    #data.columns = columns
-    #univ_stat = train.describe()
-    #data.drop(columns=['Nf_dmd','PCNfR_dmd','P2','P15','T2','TRA','farB','epr'],inplace=True)
     data = data.to_numpy()
-   
-    #x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
-
-    # Creates `data` structure to save and 
-    # share train and test datasets.
-    #data = {'x_train' : x_train.tolist(),
-    #        'y_train' : y_train.tolist(),
-    #        'x_test' : x_test.tolist(),
-    #        'y_test' : y_test.tolist()}
     data={'data':data.tolist()}
 
     # Creates a json object based on `data`
