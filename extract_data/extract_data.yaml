@@ -1,13 +1,10 @@
 name: Extract Data Function
 description: Read NASA machine data from local system
+
 inputs:
-- name: input_path
-  description: path used to access and store data
-  type: GCSPath
+- {name: input 1, type: GCSPath, description: 'input path'}
 outputs:
-- name: output_data
-  description: Path where data will be stored
-  type: GCSPath 
+- {name: output 1, type: String, description: 'output path'}
 
 implementation:
   container:
@@ -16,8 +13,7 @@ implementation:
       python, extract_data_rul.py,
       
       --input_path,
-      {inputPath: input_path},
-      
+      {inputPath: input 1},
       --output_data,
-      {outputPath: output_data},
+      {outputPath: output 1},
     ]
