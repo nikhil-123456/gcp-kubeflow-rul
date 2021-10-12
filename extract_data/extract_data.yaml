@@ -1,15 +1,23 @@
 name: Read Data Function
 description: Read NASA machine data from local system
-
+inputs:
+- name: input_path
+  description: path used to access and store data
+  type: GCSPath
 outputs:
-- {name: Data, type: LocalPath, description: 'Path where data will be stored.'}
+- name: output_data
+  description: Path where data will be stored
+  type: GCSPath 
 
 implementation:
   container:
     image: fernandolpz/only-tests:download_data_v3
     command: [
       python, extract_data_rul.py,
-
-      --data,
-      {outputPath: Data},
+      
+      --input_path,
+      {inputPath: input_path},
+      
+      --output_data,
+      {outputPath: output_data},
     ]
