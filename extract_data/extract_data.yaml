@@ -8,7 +8,7 @@ outputs:
 
 implementation:
   container:
-    image: us-central1-docker.pkg.dev/clever-tube-317207/quickstart-docker-repo/quickstart-image:tag1
+    image: us-central1-docker.pkg.dev/clever-tube-317207/quickstart-docker-repo/quickstart-image@sha256:6985f07d63005539aef0f31e5b305f4de3d268d1b60c56f3fceb8ffa617facf9
     command: [
       python, extract_data_rul.py,
       
