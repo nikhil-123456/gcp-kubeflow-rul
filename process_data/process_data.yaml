@@ -8,7 +8,7 @@ outputs:
 
 implementation:
   container:
-    image: us-central1-docker.pkg.dev/clever-tube-317207/quickstart-docker-repo/quickstart-image2@sha256:8304f941ff6f9730ac36195a3edf6000dbcf53f6dc58b797e75f524c5dfb54d4
+    image: gcr.io/clever-tube-317207/rul_image@sha256:fd8ba38a1e4c45945ef7b71f3515ec3d32d7b1d21a39051ee75de3d1eed835af
     command: [
       python, process_data_rul.py,
 
