@@ -2,7 +2,7 @@ name: Read Data Function
 description: Read NASA machine data from local system
 
 outputs:
-- {name: Data, type: LocalPath, description: 'Path where data will be stored.'}
+- {name: Data, type: GCSPath, description: 'Path where data will be stored.'}
 
 implementation:
   container:
