@@ -1,0 +1,21 @@
+name: Process data for regressor
+description: Prepares the train & test data and performs scaling
+
+inputs:
+- {name: Input Data, type: GCSPath, description: 'Path where input data is stored.'}
+outputs:
+- {name: Output Data, type: GCSPath, description: 'Path where output data is stored'}
+
+implementation:
+  container:
+    image: gcr.io/clever-tube-317207/rul_image_all@sha256:c5becc691dbb2d103af88ae71688f031e669ec1e53312e408519a269d8bb1172
+    command: [
+      python, process_data_rul_regressor.py,
+
+      --input_data,
+      {inputPath: Input Data},
+
+      --output_data,
+      {outputPath: Output Data},
+
+    ]

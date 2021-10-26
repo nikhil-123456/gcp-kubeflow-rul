@@ -1,0 +1,15 @@
+name: Extract Raw Data
+description: Read NASA machine data from local system
+
+outputs:
+- {name: Data, type: GCSPath, description: 'Path where data will be stored.'}
+
+implementation:
+  container:
+    image: gcr.io/clever-tube-317207/rul_image_all@sha256:c5becc691dbb2d103af88ae71688f031e669ec1e53312e408519a269d8bb1172
+    command: [
+      python, extract_data_rul.py,
+
+      --data,
+      {outputPath: Data},
+    ]

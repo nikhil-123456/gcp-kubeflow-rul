@@ -1,0 +1,21 @@
+name: Logistic Regression Classifier
+description: Trains a Logistic Regression Classifier
+
+inputs:
+- {name: Data, type: GCSPath, description: 'Path where data is stored.'}
+outputs:
+- {name: Accuracy, type: Float, description: 'Accuracy metric'}
+
+implementation:
+  container:
+    image: gcr.io/clever-tube-317207/rul_image_all@sha256:c5becc691dbb2d103af88ae71688f031e669ec1e53312e408519a269d8bb1172
+    command: [
+      python, logistic_regression_rul.py,
+
+      --data,
+      {inputPath: Data},
+
+      --accuracy,
+      {outputPath: Accuracy},
+
+    ]
